@@ -26,7 +26,7 @@ mongoose.connect(
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}))
 app.get('/', async (req, res) => {
-    res.send('Hello');
+    res.render('index');
 });
 
 
