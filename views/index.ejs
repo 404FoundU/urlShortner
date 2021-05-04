@@ -28,9 +28,9 @@
         <tbody>
         <% shorts.forEach(url => {%>
             <tr>
-                <td><%= url.full%></td>
-                <td><%= url.short%></td>
-                <td><%= url.click%></td>
+                <td><a href="<%= url.full%>"><%= url.full%></a></td>
+                <td><a href="<%= url.short%>"><%= url.short%></a></td>
+                <td><%= url.clicks%></td>
             </tr>
 
         <% })%>
