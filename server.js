@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import shortUrl from "./models/shortUrl.js";
 
 dotenv.config();
 const app = express();
@@ -28,5 +29,8 @@ app.use(express.urlencoded({extended: false}))
 app.get('/', async (req, res) => {
     res.render('index');
 });
+app.post('/shortUrls', async (req, res)=>{
+
+})
 
 
