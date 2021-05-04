@@ -5,7 +5,9 @@ const router = express.Router();
 
 
 router.get('/', async (req, res) => {
-    res.render('index');
+    // res.render('index');
+    const shorts = await shortUrl.find();
+    res.render('index', {shorts})
 });
 router.post('/shortUrls', async (req, res)=>{
     const short = new shortUrl();

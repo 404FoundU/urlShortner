@@ -7,7 +7,6 @@ import router from "./routes/routeer.js";
 dotenv.config();
 const app = express();
 const port = 5001;
-app.use(cors());
 mongoose.connect(
     process.env.DB_URI, {
         useNewUrlParser: true,
@@ -30,4 +29,5 @@ app.use(express.urlencoded({extended: false}))
 
 app.use('/', router);
 
+app.use(cors());
 

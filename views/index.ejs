@@ -26,7 +26,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr></tr>
+        <% shorts.forEach(url => {%>
+            <tr>
+                <td><%= url.full%></td>
+                <td><%= url.short%></td>
+                <td><%= url.click%></td>
+            </tr>
+
+        <% })%>
         </tbody>
     </table>
 </div>
