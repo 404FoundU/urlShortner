@@ -25,12 +25,23 @@ mongoose.connect(
         });
     });
 app.set('view engine', 'ejs');
+// tell express we are using url params
 app.use(express.urlencoded({extended: false}))
 app.get('/', async (req, res) => {
     res.render('index');
 });
 app.post('/shortUrls', async (req, res)=>{
-
+       const short = new shortUrl();
+       short.full = req.body.fullUrl;
+       try {
+           await short.save();
+           // res.send(short);
+           res.redirect('/')
+       }
+       catch (e){
+           console.error(e);
+           res.status(500).send(e);
+       }
 })
 
 
